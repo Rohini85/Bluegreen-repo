@@ -1,5 +1,9 @@
+pipeline {
 
+	agent any
+stages{
 stage('Build image') {
+
 }
 stage(Push image') {
 }
@@ -16,4 +20,5 @@ stage('Deploy green container') {
 }
 stage('Redirect service to green container') {
   when { branch 'green'}
+}
 }
