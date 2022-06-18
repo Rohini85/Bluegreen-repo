@@ -3,9 +3,11 @@ pipeline {
 	agent any
 stages{
 stage('Build image') {
+		sh 'sudo docker build -t rohini3/blgr-repo:eks .'
 
 }
 stage(Push image') {
+
 }
 stage('create the kubeconfig file') {
 }
