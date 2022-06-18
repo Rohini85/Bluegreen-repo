@@ -3,10 +3,21 @@ pipeline {
 	agent any
 stages{
 stage('Build image') {
+		steps{
 		sh 'sudo docker build -t rohini3/blgr-repo:eks .'
-
 }
+}
+stage('login') {
+
+			steps {
+
+				withCredentials([string(credentialsId: 'DOCKER_PWD', variable: 'PASSWORD')]) {
+					sh 'sudo docker login -u rohini3 -p Myhub123!'
+				}
+			}
 stage(Push image') {
+
+
 
 }
 stage('create the kubeconfig file') {
